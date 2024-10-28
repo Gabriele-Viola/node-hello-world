@@ -11,12 +11,13 @@ Bonus:
     altrimenti stampa Access restricted */
 
 console.log('hello node js');
-console.log(process.env.PIN);
+console.log(process.env);
 console.log(process.argv.slice(2));
 
 const PIN = process.env.PIN
-const elements = process.argv.slice(2).join(' - ')
-if (PIN == 666){
+const elements = process.argv.slice(3).join(' - ')
+const user = process.argv[2]
+if (PIN == 666 && user == 'admin'){
     console.log(`Welcome Admin the elements to add are: ${elements}`);
     
 }else{
